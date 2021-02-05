@@ -1,0 +1,53 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 my-5">
+      <h1 class="text-center">Login</h1>
+      <p class="text-center">Entre ou Crie uma conta de Usuário.</p>
+
+      <%- include('includes/messages') %>
+
+      <div class="row">
+          <div class="col-lg">
+              <h4>Faça seu Cadastro</h4>
+              <p>Preencha os dados para Criar sua Conta</p>
+              <form action="/login/register" method="post">
+                <input type="hidden" name="_csrf" value="<%= formToken %>">
+                <div class="form-group my-3">
+                  <label for="exampleInputEmail1">E-mail</label>
+                  <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="exemplo@exemplo.com.br">
+                </div>
+                <div class="form-group my-3">
+                  <label for="exampleInputPassword1">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Senha">
+                </div>
+                <div class="my-3">
+                    <button type="submit" class="btn btn-primary">Criar minha Conta</button>
+                </div>
+              </form>
+          </div>
+          <div class="col-lg">
+              <h4>Entrar</h4>
+              <p>Entre em sua Conta de Usuário</p>
+              <form action="/login/login" method="post">
+                <input type="hidden" name="_csrf" value="<%= formToken %>">
+                <div class="form-group my-3">
+                  <label for="exampleInputEmail1">E-mail</label>
+                  <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="exemplo@exemplo.com.br">
+                </div>
+                <div class="form-group my-3">
+                  <label for="exampleInputPassword1">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Senha">
+                </div>
+                <div class="my-3">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+              </form>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<%- include('includes/footer') %>
